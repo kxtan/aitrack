@@ -1,7 +1,11 @@
 from src.MongoWrapper import MongoWrapper
 from fastapi import FastAPI, HTTPException
 
-app = FastAPI()
+app = FastAPI(title="aitrack",
+    description="Simple backend to track data for ML Projects",
+    version="0.0.1",
+)
+
 mongo = MongoWrapper()
 
 @app.post("/upload")
